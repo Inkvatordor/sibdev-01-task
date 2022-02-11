@@ -1,0 +1,351 @@
+ * {
+     margin: 0px;
+     padding: 0px;
+     box-sizing: border-box;
+ }
+ 
+ .wrapper {
+     display: grid;
+     grid-template-columns: 240px 1fr 1fr;
+     grid-template-rows: 100px 100px 1fr;
+     grid-template-areas: "sb hd hd""sb hi hi""sb m m";
+ }
+ 
+ .sidebar {
+     background-color: #F3F4F9;
+     grid-area: sb;
+     z-index: 2;
+ }
+ 
+ .sidebar__categories {
+     position: sticky;
+     top: 0px;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .logo {
+     margin-left: 42px;
+     margin-top: 42px;
+     margin-right: 78px;
+     margin-bottom: 41px;
+     display: flex;
+     align-items: center;
+     text-align: center;
+ }
+ 
+ .logo__title {
+     font-family: Poppins;
+     font-style: normal;
+     font-weight: 500;
+     font-size: 16px;
+     line-height: 24px;
+     color: #333333;
+     margin-left: 10px;
+ }
+ 
+ .sidebar__category {
+     height: 64px;
+     display: flex;
+     align-items: center;
+     text-align: center;
+     font-family: Open Sans;
+     font-style: normal;
+     font-weight: 600;
+     font-size: 16px;
+     line-height: 22px;
+ }
+ 
+ .sidebar__category-img {
+     padding-left: 40px;
+     margin-right: 12px;
+ }
+ 
+ .sidebar__category__selected {
+     color: #34ABE0;
+ }
+ 
+ .sidebar__category__selected-img {
+     border-left: 3px solid black;
+     filter: invert(69%) sepia(70%) saturate(2719%) hue-rotate(167deg) brightness(92%) contrast(89%);
+ }
+ 
+ .sidebar__burger-menu-wrapper {
+     width: 48px;
+     height: 106px;
+     background: url("/img/sidebar_button.svg") no-repeat scroll;
+     z-index: 34324;
+     position: fixed;
+     left: 240px;
+     top: 0px;
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+ }
+ 
+ .sidebar__burger-menu {
+     display: flex;
+     flex-direction: column;
+     gap: 7px;
+     margin-left: 5px;
+     transition: all .5s ease-in-out;
+ }
+ 
+ .sidebar__burger-menu__clicked {
+     left: 250px;
+ }
+ 
+ .sidebar__burger-menu__stick {
+     width: 26px;
+     height: 2px;
+     background: #262626;
+     border-radius: 50px;
+     transition: all .5s ease-in-out;
+ }
+ 
+ .sidebar__burger-menu__stick__first__clicked {
+     transform: translateY(9px) rotate(135deg);
+ }
+ 
+ .sidebar__burger-menu__stick__second__clicked {
+     transform: translateY(0px) rotate(-135deg);
+ }
+ 
+ .sidebar__burger-menu__stick__third__clicked {
+     transform: scale(0);
+ }
+ 
+ .header__title-wrapper {
+     background-color: white;
+     grid-area: hd;
+     display: flex;
+ }
+ 
+ .header__title-wrapper__title {
+     margin-left: 60px;
+     margin-top: 40px;
+     font-family: Open Sans;
+     font-style: normal;
+     font-weight: 600;
+     font-size: 28px;
+     line-height: 38px;
+ }
+ 
+ .header__input-wrapper {
+     grid-area: hi;
+     background-color: white;
+     border-bottom: 1px solid #E5E5E5;
+     z-index: 1;
+ }
+ 
+ .header__input-wrapper {
+     padding-top: 2px;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .header__input {
+     background: url(img/search.svg) no-repeat scroll 16px 16px;
+     padding-left: 30px;
+     height: 52px;
+     font-family: Open Sans;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 18px;
+     line-height: 28px;
+     margin-left: 60px;
+     margin-right: 60px;
+     border: 1px solid rgba(51, 51, 51, 0.2);
+     border-radius: 50px;
+     width: auto;
+     padding-left: 50px;
+ }
+ 
+ .content {
+     background-color: #FAFAFA;
+     grid-area: m;
+     height: 200vh;
+     padding-top: 40px;
+     display: flex;
+     align-content: flex-start;
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+ 
+ .content__coupon {
+     min-width: none;
+     width: 347px;
+     height: 161px;
+     border-radius: 10px;
+     background-color: pink;
+     clip-path: url(#couponClip);
+     display: flex;
+     flex-direction: column;
+     padding-left: 20px;
+     padding-top: 16px;
+     padding-bottom: 16px;
+     background: url("/img/pivko.jpg") no-repeat 216px;
+     background-color: white;
+     filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.15));
+ }
+ 
+ .content__coupon__title {
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 16px;
+     line-height: 16px;
+     letter-spacing: 0.1em;
+     text-transform: uppercase;
+ }
+ 
+ .content__coupon__description {
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 16px;
+     line-height: 16px;
+     color: #000000;
+     opacity: 0.5;
+ }
+ 
+ .content__coupon__promocode {
+     margin-top: auto;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: 500;
+     font-size: 36px;
+     line-height: 28px;
+     display: flex;
+     align-items: center;
+     color: #DF212D;
+ }
+ 
+ .content__coupon__type {
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 16px;
+     line-height: 16px;
+     display: flex;
+     align-items: center;
+     letter-spacing: 0.4em;
+     text-transform: uppercase;
+     color: #000000;
+     opacity: 0.5;
+ }
+ /* Немного багует если менять ширину */
+ 
+ @media screen and (min-width: 1025px) {
+     .sidebar__burger-menu-wrapper {
+         display: none;
+     }
+     .logo {
+         display: flex !important;
+     }
+     .logo__title {
+         display: block !important;
+     }
+     .sidebar__category-title {
+         display: block !important;
+     }
+ }
+ 
+ @media screen and (max-width: 1024px) {
+     .wrapper {
+         grid-template-columns: 104px 1fr 1fr;
+     }
+     .sidebar__category-title {
+         display: none;
+     }
+     .logo {
+         /* поправить margin */
+         margin-left: 40px;
+         margin-top: 40px;
+         margin-right: 39px;
+         margin-bottom: 41px;
+         display: flex;
+         align-items: center;
+         text-align: center;
+     }
+     .logo__img {
+         width: 24px;
+         height: 24px;
+     }
+     .logo__title {
+         display: none;
+     }
+     .sidebar__burger-menu-wrapper {
+         left: 104px;
+     }
+     .header__search-input {
+         margin-left: 26px;
+         margin-right: 26px;
+     }
+     .header__input-wrapper {
+         position: sticky;
+         top: 0px;
+         justify-content: center;
+     }
+     .header__title-wrapper {
+         justify-content: flex-end;
+         margin-right: 60px;
+     }
+     .content__coupon {
+         width: 300px;
+         height: 144px;
+         background: url("/img/pivko.jpg") no-repeat 181px;
+         background-color: white;
+         background-size: 117px;
+     }
+ }
+ 
+ @media screen and (max-width: 568px) {
+     .wrapper {
+         grid-template-columns: 12px 1fr 1fr;
+     }
+     .sidebar__categories {
+         align-items: flex-start;
+     }
+     .sidebar__category {
+         display: none;
+         margin-left: 19px;
+     }
+     .sidebar__category-img {
+         display: none;
+     }
+     .logo {
+         display: none;
+         align-self: center;
+     }
+     .sidebar__burger-menu-wrapper {
+         left: 12px;
+     }
+     .header__input-wrapper {
+         justify-content: center
+     }
+     .header__input-wrapper {
+         position: sticky;
+         top: 0px;
+     }
+     .header__input {
+         margin-left: 20px;
+         margin-right: 21px;
+         min-width: 300px;
+     }
+     .header__title-wrapper {
+         justify-content: flex-end;
+     }
+     .content__coupon {
+         width: 270px;
+         height: 130px;
+         background: url("/img/pivko.jpg") no-repeat 181px;
+         background-color: white;
+         background-size: 87px;
+     }
+ }
+ 
+ .sidebar__open {
+     grid-template-columns: 240px 1fr 1fr;
+ }
